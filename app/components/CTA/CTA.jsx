@@ -2,11 +2,15 @@
 
 import Image from 'next/image'
 import React from 'react'
+import { motion, Variants } from "framer-motion";
 
 const CTA = () => {
   return (
     <div className='bg-white py-16  dark:bg-dark-green lg:px-52 md:px-12 px-4'>
-         <div  className="bg-slate-100  dark:bg-footer-grey w-full rounded-md shadow-lg py-10 relative overflow-hidden">
+         <motion.div 
+         whileHover={{ scale: [null, 1, 1.1] }}
+         transition={{ duration: 0.3 }}
+          className="bg-slate-100  dark:bg-footer-grey w-full rounded-md shadow-lg py-10 relative overflow-hidden">
         <div className='lg:block hidden  absolute top-0 left-[14rem] right-0'>
             <Image src="Group 2528.svg" height={100} width={500} alt='circle'/>
         </div>
@@ -20,7 +24,7 @@ const CTA = () => {
                     <Image src="/google.svg" height={50} width={100} alt='image'/>
                 </button>
              </div>
-         </div>
+         </motion.div>
 
     </div>
   )

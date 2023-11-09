@@ -12,12 +12,12 @@ const [isMenuOpen, setIsMenuOpen] = React.useState(false);
  
 
   return (
-    <Navbar onMenuOpenChange={setIsMenuOpen} maxWidth="xl"  isBlurred={false} className=" bg-white dark:bg-dark-green">
+    <Navbar onMenuOpenChange={setIsMenuOpen} maxWidth="xl"  isBlurred={false} className=" bg-white dark:bg-dark-green fixed">
       
       <NavbarBrand>
       <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          className="sm:hidden text-white"
+          className="sm:hidden text-gray-600 dark:text-white"
         />
       
         <p className="font-bold ml-4 text-sm">RoboAdvisor</p>
@@ -29,7 +29,7 @@ const [isMenuOpen, setIsMenuOpen] = React.useState(false);
           </Link>
         </NavbarItem>
         <NavbarItem isActive>
-          <Link href="#" aria-current="page">
+          <Link className=" text-lemon-green" href="#" aria-current="page">
             Customers
           </Link>
         </NavbarItem>
@@ -41,10 +41,10 @@ const [isMenuOpen, setIsMenuOpen] = React.useState(false);
       </NavbarContent>
       <NavbarContent justify="end">
         <NavbarItem className="hidden lg:flex">
-          <Link href="#">Login</Link>
+          <Link className="text-lemon-green" href="#">Login</Link>
         </NavbarItem>
         <NavbarItem className="flex items-center gap-4">
-          <Button as={Link} className=" " href="#" variant="flat">
+          <Button as={Link} className=" bg-lemon-green text-white text-xs" href="#" variant="flat">
             Sign Up
           </Button>
           <ThemeSwitcher/>
