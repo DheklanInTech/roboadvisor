@@ -6,7 +6,7 @@ import SearchSection from '../SelarchSection/SearchSection'
 const Footer = () => {
   return (
     <div className=' bg-slate-100 dark:bg-footer-grey lg:px-32 md:px-12 px-4 py-10'>
-      <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 border-b-1 pb-8 border-slate-300 dark:border-slate-500'>
+      <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4  border-b-1 pb-8 border-slate-300 dark:border-slate-500'>
           <div>
             <h1 className=' font-semibold text-xl'>RoboAdvisor</h1>
             <p className='text-xs mt-1'>High level experience in web design and development knowledge, producing quality work.</p>
