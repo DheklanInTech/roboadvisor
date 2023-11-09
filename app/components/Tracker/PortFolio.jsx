@@ -3,7 +3,7 @@
 import React from 'react';
 
 function Portfolio({ overallRiskTolerance }) {
-    // Define the percentage allocation for each stock based on the overall risk tolerance
+  
     const stocks = [
         { stock: 'Nigerian Stocks', percentage: overallRiskTolerance * 10 },
         { stock: 'Foreign Stocks', percentage: overallRiskTolerance * 8 },
@@ -28,7 +28,7 @@ function Portfolio({ overallRiskTolerance }) {
                             <p className='text-sm font-semibold'>{stock.stock}</p>
                         </div>
                         <div className="w-[50%] bg-gray-100 rounded-full dark:bg-gray-400">
-                            <div className={`${stock.percentage <= 5 && "bg-red-600"} ${stock.percentage >= 50 && "bg-green-500"} ${stock.percentage >= 20 && "bg-yellow-600"} ${stock.percentage >= 40 && "bg-yellow-300"} ${stock.percentage >= 70 && "bg-green-700"} md:text-[0.65rem] text-[0.55rem] font-medium  text-gray-800 dark:text-blue-100 text-center md:p-0.5 p-0.3 leading-none rounded-full`} style={{ width: `${stock.percentage}%` }}>{stock.percentage}%</div>
+                            <div className={` bg-lime-600 md:text-[0.65rem] text-[0.55rem] font-medium  text-gray-800 dark:text-blue-100 text-center md:p-0.5 p-0.3 leading-none rounded-full`} style={{ width: `${stock.percentage}%` }}>{stock.percentage}%</div>
                         </div>
 
                     </div>

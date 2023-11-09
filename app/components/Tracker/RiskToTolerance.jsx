@@ -12,6 +12,41 @@ function RiskToleranceSelector({ onSelectRiskTolerance }) {
     const handleSubmit = () => {
       onSelectRiskTolerance(selectedRisk);
     };
+    
+    const [file, setFile] = useState(null);
+
+    const handleFileChange = (e) => {
+      setFile(e.target.files[0]);
+    };
+  
+    const handleFileUpload = async () => {
+      const formData = new FormData();
+      formData.append('file', file);
+  
+      try {
+        const response = await fetch('/api/uploadfile', {
+          method: 'POST',
+          body: formData,
+        });
+  
+        if (response.ok) {
+          const data = await response.json();
+          console.log('File uploaded successfully:', data);
+         
+        } else {
+          console.error('File upload failed:', response.statusText);
+          
+        }
+      } catch (error) {
+        console.error('Error uploading file:', error);
+       
+      }
+    };
+
+
+
+
+
   
     return (
       <div className=' bg-gray-300 dark:bg-footer-grey mb-4 p-4 md:w-[70%] w-full rounded-md'>
@@ -30,6 +65,7 @@ function RiskToleranceSelector({ onSelectRiskTolerance }) {
         />
         
         <button className=' bg-lemon-green text-white px-4 py-1 rounded-md cursor-pointer'  onClick={handleSubmit}>Submit</button>
+      
       </div>
     );
   }
